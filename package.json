@@ -47,6 +47,7 @@
     "autoprefixer": "^10.3.7",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
+    "dotenv": "^10.0.0",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-define-config": "^1.1.1",
