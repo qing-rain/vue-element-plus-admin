@@ -41,7 +41,9 @@
     "@ls-lint/ls-lint": "^1.10.0",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "@vitejs/plugin-legacy": "^1.6.2",
     "@vitejs/plugin-vue": "^1.9.3",
+    "@vitejs/plugin-vue-jsx": "^1.2.0",
     "autoprefixer": "^10.3.7",
     "commitizen": "^4.2.4",
     "conventional-changelog-cli": "^2.1.1",
@@ -67,6 +69,7 @@
     "stylelint-order": "^4.1.0",
     "typescript": "^4.4.3",
     "vite": "^2.6.4",
+    "vite-plugin-html": "^2.1.1",
     "vite-plugin-imagemin": "^0.4.6",
     "vue-eslint-parser": "^7.11.0",
     "vue-tsc": "^0.3.0"

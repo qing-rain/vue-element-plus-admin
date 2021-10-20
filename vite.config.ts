@@ -6,6 +6,7 @@ import { loadEnv } from 'vite';
 import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/vite/proxy';
 import { generateModifyVars } from './build/generate/generateModifyVars'
+import { createVitePlugins } from './build/vite/plugin'
 import { OUTPUT_DIR } from './build/constant';
 
 function pathResolve(dir: string) {
@@ -68,8 +69,9 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     css: {
       preprocessorOptions: {
-        additionalData: generateModifyVars()
+        //additionalData: generateModifyVars()
       },
     },
+    plugins: createVitePlugins(viteEnv, isBuild)
   }
 }
