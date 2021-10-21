@@ -1,12 +1,12 @@
 import type { UserConfig, ConfigEnv } from 'vite';
-import pkg from './package.json'
+import pkg from './package.json';
 import moment from 'moment';
 import { resolve } from 'path';
 import { loadEnv } from 'vite';
 import { wrapperEnv } from './build/utils';
 import { createProxy } from './build/vite/proxy';
-import { generateModifyVars } from './build/generate/generateModifyVars'
-import { createVitePlugins } from './build/vite/plugin'
+import { generateModifyVars } from './build/generate/generateModifyVars';
+import { createVitePlugins } from './build/vite/plugin';
 import { OUTPUT_DIR } from './build/constant';
 
 function pathResolve(dir: string) {
@@ -72,6 +72,11 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         //additionalData: generateModifyVars()
       },
     },
-    plugins: createVitePlugins(viteEnv, isBuild)
-  }
-}
+    plugins: createVitePlugins(viteEnv, isBuild),
+    optimizeDeps: {
+      // @iconify/iconify: The dependency is dynamically and virtually loaded by @purge-icons/generated, so it needs to be specified explicitly
+      include: ['@iconify/iconify', 'moment/dist/locale/zh-cn', 'moment/dist/locale/eu'],
+      exclude: ['vue-demi'],
+    },
+  };
+};
