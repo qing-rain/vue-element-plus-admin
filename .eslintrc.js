@@ -30,6 +30,7 @@ module.exports = defineConfig({
   ],
   //自定义规则配置
   rules: {
+    "indent": ['error', 2],
     'vue/script-setup-uses-vars': 'error',
     '@typescript-eslint/ban-ts-ignore': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
